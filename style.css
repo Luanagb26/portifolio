@@ -91,13 +91,15 @@ strong{
     display: flex;
     flex-direction: row-reverse;
     justify-content: flex-end;
+    justify-content: center;
     margin: 0rem 9.5rem;
+    margin-bottom: 2rem;
+    height: auto;
 }
 
 .apresentacao__foto{
-    width: 24.198rem;
-    height: 22.023rem;
-    margin-left: 10%;
+    max-width: 26.198rem;
+    max-height: 24.023rem;
 }
 
 .apresentacao__titulo{
@@ -129,16 +131,20 @@ strong{
     margin: 3.813rem 0rem;
     padding: 2rem 9.5rem;
     padding-right: 9.5rem;
-    justify-content: center;
+    justify-items: center;
     left: 0;
 }
-
+.sobre-mim div{
+    box-sizing: content-box;
+    max-width: 118.5rem;
+}
 .sobre-mim__titulo{
-    font-size: 32px;
+    font-size: 2rem;
 }
 
 .sobre-mim__texto{
     font-size: 1.375rem;
+    
     max-width: 72%;
 }
 
@@ -223,7 +229,7 @@ strong{
 
 .formacao{
     display: flex;
-    width: 52%;
+    width: auto;
     flex-direction: column;
     justify-self: center;
     align-items: center;
@@ -242,6 +248,7 @@ strong{
     display: flex;
     flex-direction: row;
     justify-content: center;
+    padding: 2rem;
     gap: 1rem;
     
 }
@@ -580,7 +587,7 @@ strong{
         flex-direction: column;
         flex-grow: 2;
         margin: 0;
-        padding-left: 0;
+        padding: 0rem;
     }
     .formacao__elemento{
         margin-bottom: 5rem;
@@ -627,7 +634,7 @@ strong{
 }
 
 /* Tablets e telas maiores */
-@media (min-width: 768px) {
+@media (min-width: 768px) and (max-width: 1023px) {
     .cabecalho {
         flex-direction: row;
         align-items: center;
@@ -775,16 +782,21 @@ strong{
     .apresentacao{
         justify-content: center;
         margin: 0rem 2rem;
+        height: auto;
     }
-
+    .apresentacao__conteiner{
+        height: auto;
+    }
     .apresentacao__foto{
-        align-items: stretch;
+        max-width: auto;
+        max-height: auto;
+        
     }
     .sobre-mim{
         padding: 2rem 2rem;;
     }
     .sobre-mim__texto{
-        max-width: 46.938rem;
+        max-width: auto;
     }
  
 
@@ -842,15 +854,18 @@ strong{
     .formacao__nome{
         white-space: wrap;
     }
-    
+    .projetos{
+        margin: 0rem 2rem;
+    }
     .projetos__conteiner{
-        flex-direction: column;
+        transform:  scale(0.86);
     }
     .projetos__conteiner:nth-child(2){
-        flex-direction: column;
+        transform:  scale(0.86);
     }
     .projetos__detalhes{
         text-align: center;
+        
     }
 
     .contato__titulo{
