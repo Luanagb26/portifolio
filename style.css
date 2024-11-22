@@ -40,10 +40,11 @@ strong{
 /* ------------------------------ Seção Menu -------------------------------*/
 .cabecalho {
     display: flex;
-    flex-direction: column;
-    align-items: center;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: baseline;
     padding: 1rem 0rem;
-    margin: 0rem 9.5rem;
+    margin: 0rem 2rem;
     background-color: var(--cor-de-fundo-menu);
     color: var(--cor-do-texto);
     
@@ -58,23 +59,30 @@ strong{
 
 
 .cabecalho__logo {
-    max-width: 80px; /* Ajuste para telas pequenas */
+    max-width: 5rem; 
     color:#FFFFFF;
     width: 1.5rem;
     height: 1.5rem;
 }
 
 .cabecalho__titulo {
-    font-size: 1.2rem;
+    font-size: 2rem;
     text-align: center;
 }
 
-.navegacao__lista {
+.cabecalho p{
     display: none;
 }
 
+.navegacao__lista {
+    display: flex;
+    flex-direction: row;
+    gap: 1rem;
+    margin-top: 0;
+}
+
 .navegacao__elemento a {
-    font-size: 0.9rem;
+    font-size: 1.375rem;
 }
 /* ------------------------------ Seção Apresentação ------------------------------*/
 
@@ -82,12 +90,13 @@ strong{
     display: flex;
     flex-direction: row-reverse;
     justify-content: flex-end;
-    margin: 0rem 9.5rem;
+    margin: 0rem 2rem;
 }
 
 .apresentacao__foto{
-    width: 23.824rem;
-    height: 20.438rem;
+    width: 24.198rem;
+    height: 22.023rem;
+    margin-left: 10%;
 }
 
 .apresentacao__titulo{
@@ -115,10 +124,10 @@ strong{
 
 .sobre-mim{
     background-color: var(--cor-de-fundo-2); 
-    height: 23.938rem;
+    height: auto;
     margin: 3.813rem 0rem;
-    padding: 2rem 9.5rem;
-    padding-right: 9.5rem;
+    padding: 2rem 2rem;
+    padding-right: 2rem;
     justify-content: center;
     left: 0;
 }
@@ -128,13 +137,14 @@ strong{
 }
 
 .sobre-mim__texto{
-    font-size: 16px;
-    width: 46.938rem;
+    font-size: 1.375rem;
+    max-width: 72%;
 }
 
 /*------------------------------ Seção de Habilidades ------------------------------*/
 
-.habilidades{    margin: 0rem 9.5rem;
+.habilidades{   
+    margin: 0rem 2rem;
     text-align: start;
 }
 
@@ -149,6 +159,7 @@ strong{
     text-align: start;
     gap: 1rem;
     padding: 0;
+    justify-content: center;
 }
 
 .habilidades__elemento {
@@ -172,7 +183,7 @@ strong{
 /*------------------------------ Seção de Hobbies --------------------------------*/
 
 .hobbies{   
-    margin: 0rem 9.5rem;
+    margin: 0rem 2rem;
     text-align: start;
 }
 
@@ -187,6 +198,7 @@ strong{
     text-align: start;
     gap: 1rem;
     padding: 0;
+    justify-content: center;
 }
 
 .hobbies__elemento {
@@ -214,7 +226,7 @@ strong{
     align-items: center;
     background-color: var(--cor-de-fundo-2);
     height: 34.563rem;
-    margin: 4.438rem 9.5rem;
+    margin: 4.438rem 2rem;
     border-radius: 1.875rem;
 }
 
@@ -281,7 +293,7 @@ strong{
 }
 
 .projetos__titulo{
-    font-size: 32px;
+    font-size: 2rem;
 }
 
 .projetos__conteiner{
@@ -346,15 +358,19 @@ strong{
     flex-direction: column;
 }
 
+.contato__conteiner p{
+    max-width: 100%;
+    margin-left: 2rem;
+    margin-bottom: 0rem;
+    padding-bottom: 0rem;
+ 
+}
+
 .contato__titulo{
     font-size: 32px;
     margin: 0.5rem 2rem;
 }
 
-.contato p{
-    white-space: pre;
-    margin-left: 2rem;
-}
 
 .contato__formulario{
     display: flex;
@@ -371,11 +387,9 @@ strong{
 
 .contato__campo::placeholder{
     font-family: 'Raleway', sans-serif;
-    font-size: 12px;
+    font-size: 16px;
     color: var(--cor-placeholder);
-    padding-left: 1rem ;
-    
-
+    padding: 1rem;
 }
 .contato__campo:focus{
     color: var(--cor-do-link);
@@ -429,23 +443,199 @@ strong{
     border: 1px solid var(--cor-do-link);
     
 }
+/* ------------------------------ Footer ---------------------------------------------- */
+.rodape{
+    background: var(--cor-de-fundo-2);
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: baseline;
+    margin-top: 2rem;
 
+    font-size: 1.5rem;
+    
+}
+.rodape img{
+    width: 1.5rem;
+    height: 1.5rem;
+    margin: 0.5rem;
+}
+.rodape div{
+    text-align: center;
+}
 /* ------------------------------ Responsividade ---------------------------------------*/
+@media (min-width: 360px) and (max-width: 767px) {
+
+    .cabecalho{
+        margin: 0rem 1rem;
+        align-items: flex-start;
+
+    }
+    .logo__container{
+        max-width: 100%;
+        justify-content: flex-end;
+    }
+    .cabecalho p{
+        display: block;
+        font-size: 1rem;
+        margin-left: 1.8rem;
+        margin-top: 0.75rem;
+    }
+
+    .cabecalho__logo{
+        max-width: 1rem;
+        height: 1rem;
+    }
+    .cabecalho__titulo{
+        font-size: 1rem;
+        white-space: nowrap;
+    }
+    
+    .navegacao__lista{
+        display: none;
+    }
+
+    .apresentacao{
+        flex-direction: column;
+        flex-wrap: wrap;
+       
+        margin: 1rem;
+    }
+    .apresentacao__foto{
+        width: 6.125rem;
+        height: 5.5rem;
+        margin: 0rem;
+    }
+    .apresentacao__titulo{
+        font-size: 1.375rem;
+        max-width: 100%;
+        margin-right: 1rem;
+    }
+    .apresentacao__subtitulo{
+        font-size: 1rem;
+        max-width: 100%;
+        margin-right: 1rem;
+    }
+    .redes{
+        gap: 1rem;
+    }
+
+    .sobre-mim{
+        max-width: 100%;
+        height: 33rem;
+        padding-bottom: 9rem ;
+        box-sizing: content-box;;
+        padding: 1rem;
+    }
+    .sobre-mim__titulo{
+        font-size: 1.375rem;
+    }
+    .sobre-mim__texto{
+        font-size: 1rem;
+        max-width: 100%; 
+    }
+
+    .habilidades__titulo{
+        font-size: 1.375rem;
+    }
+    .habilidades__lista{
+        display: grid;
+        grid-template-columns: repeat(2,1fr);
+        column-gap: 0rem;
+        gap: 0rem;
+        margin: 0;
+    }
+    .habilidades__elemento{
+        transform: scale(0.7);
+    }
+    
+
+    .hobbies__titulo{
+        font-size: 1.375rem;
+    }
+    .hobbies__lista{
+        display: grid;
+        grid-template-columns: repeat(2,1fr);
+        column-gap: 0rem;
+        gap: 0rem;
+        margin: 0;
+    }
+    .hobbies__elemento{
+        transform: scale(0.7);
+    }
+
+    .formacao{
+        max-width: 100%;
+        height: 85rem;
+        padding: 1rem;
+        margin: 3rem 0rem;
+        border-radius: 0;
+        
+    }
+    .formacao__lista{
+        flex-direction: column;
+        flex-grow: 2;
+        margin: 0;
+        padding-left: 0;
+    }
+    .formacao__elemento{
+        margin-bottom: 5rem;
+    }
+
+    .projetos__titulo{
+        font-size: 1.375rem;
+    }
+    .projetos__conteiner{
+        flex-direction: column;
+        margin: 1rem 0rem;
+        max-width: 100%;
+    }
+    .projetos__conteiner:nth-child(2){
+        flex-direction: column;
+    }
+    .projetos__detalhes{
+        text-align: center;
+    }
+
+    .contato img{
+        display: none;
+    }
+    .contato__campo{
+        width: 18.5rem;
+        height: 3.5rem;
+    }
+    .contato__campo--textarea{
+        width: 18.5rem;
+        height: 3.5rem;
+    }
+    .contato__campo--textarea:nth-child(4){
+        width: 18.5rem;
+        height: 8.313rem;
+    }
+
+    .rodape img{
+        width: 1rem;
+        height: 1rem;
+    }
+    .rodape div{
+        font-size: 1rem;
+    }
+}
 
 /* Tablets e telas maiores */
-@media (min-width: 768px) {
+@media (min-width: 768px) and (max-width: 1023) {
     .cabecalho {
         flex-direction: row;
-        justify-content: space-between;
         align-items: center;
     }
 
     .cabecalho__logo {
-        max-width: 100px;
+        max-width: 1rem;
+        height: 1rem;
     }
 
     .cabecalho__titulo {
-        font-size: 1.5rem;
+        font-size: 1rem;
     }
 
     .navegacao__lista {
@@ -458,22 +648,118 @@ strong{
     .navegacao__elemento a {
         font-size: 1rem;
     }
-    
-    /*------------------------------ Seção de Habilidades ------------------------------*/
-      .habilidades__lista{
-      
+
+    .apresentacao{
+        margin: 0rem;
+    }
+
+    .apresentacao__foto{
+        width: 16rem;
+        height: 13rem;
+    }
+    .apresentacao__titulo{
+        font-size: 1.375rem;
+    }
+    .apresentacao__subtitulo{
+        font-size: 1rem;
+    }
+
+    .sobre-mim{
+        max-width: 100%;
+        height: auto;
+    }
+    .sobre-mim__titulo{
+        font-size: 1.375rem;
+    }
+    .sobre-mim__texto{
+        max-width: 100%;
+        font-size: 1rem;
+    }
+
+    .habilidades__titulo{
+        font-size: 1.375rem;
+    }
+    .habilidades__lista{
+        flex-wrap: wrap;
     }
     .habilidades__elemento {
-       flex-shrink: 5rem;
+       flex-grow: 1;
+    }
+
+    /*------------------------------ Seção de Hobbies --------------------------------*/
+    .hobbies__titulo{
+        font: 1.375rem;
+    }
+    .hobbies__lista{
+        flex-wrap: wrap;
+    }
+    .hobbies__elemento {
+       flex-grow: 1;
+    }
+
+    /*------------------------------ Formação --------------------------------*/
+    .formacao{
+        border-radius: 0;
+        width: 100%;
+        margin: 0;
+        margin-top: 6rem;
+        
+    }
+    .formacao__elemento{
+        width: 14rem;
+        height: 10.563rem;
+    }
+    .formacao__elemento:nth-child(1) img{
+        width: 12rem;
+        margin-top: 3rem;
+        margin-bottom: 0.5rem;
+    }
+    .formacao__elemento:nth-child(2) img{
+        width: 12rem;
+        margin-top: 1rem;
+    }
+    .formacao__elemento:nth-child(3) img{
+        width: 12rem;
+        height: 10.563rem;
+        margin-top: 0;
+        margin-bottom: 0.1rem;
+
+    }
+
+    .formacao__nome{
+        white-space: wrap;
+    }
+    
+    .projetos__conteiner{
+        flex-direction: column;
+    }
+    .projetos__conteiner:nth-child(2){
+        flex-direction: column;
+    }
+    .projetos__detalhes{
+        text-align: center;
+    }
+
+    .contato__titulo{
+        font-size: 1.373rem;
+    }
+   
+    .contato img{
+        display: none;
+    }
+    .contato__conteiner{
+        max-width: 100%;
+        margin: 0;
+    }
+
+    .rodape div{
+        font-size: 1rem;
     }
 }
 
 /* Telas grandes */
-@media (min-width: 1024px) {
+@media (min-width: 1024px) and (max-width: 1440px) {
     /* Aqui você pode ajustar ainda mais o design para telas grandes */
-    .cabecalho__titulo {
-        font-size: 1.8rem;
-    }
 
     .navegacao__elemento a {
         font-size: 1.1rem;
@@ -481,38 +767,92 @@ strong{
 
     .apresentacao{
         justify-content: center;
-        flex-grow: 2;
+        
     }
 
     .apresentacao__foto{
         align-items: stretch;
     }
 
-    .sobre-mim{
-        
+    .sobre-mim__texto{
+        max-width: 46.938rem;
     }
+ 
 
     /*------------------------------ Seção de Habilidades ------------------------------*/
     .habilidades__lista{
-        
+        flex-wrap: wrap;
     }
     .habilidades__elemento {
        flex-grow: 1;
     }
 
     /*------------------------------ Seção de Hobbies --------------------------------*/
-
     .hobbies__lista{
-        
+        flex-wrap: wrap;
     }
     .hobbies__elemento {
        flex-grow: 1;
     }
 
     /*------------------------------ Formação --------------------------------*/
-
     .formacao{
-        
+        border-radius: 0;
+        width: 100%;
+        margin: 0;
+        margin-top: 6rem;
         
     }
+    .formacao__elemento{
+        width: 14rem;
+        height: 10.563rem;
+    }
+    .formacao__elemento:nth-child(1) img{
+        width: 12rem;
+        margin-top: 3rem;
+        margin-bottom: 0.5rem;
+    }
+    .formacao__elemento:nth-child(2) img{
+        width: 12rem;
+        margin-top: 1rem;
+    }
+    .formacao__elemento:nth-child(3) img{
+        width: 12rem;
+        height: 10.563rem;
+        margin-top: 0;
+        margin-bottom: 0.1rem;
+
+    }
+
+    .formacao__nome{
+        white-space: wrap;
+    }
+    
+    .projetos__conteiner{
+        flex-direction: column;
+    }
+    .projetos__conteiner:nth-child(2){
+        flex-direction: column;
+    }
+    .projetos__detalhes{
+        text-align: center;
+    }
+
+    .contato__titulo{
+        font-size: 1.373rem;
+    }
+   
+    .contato img{
+        display: none;
+    }
+
+    .rodape img{
+        width: 1rem;
+        height: 1rem;
+    }
+    .rodape div{
+        font-size: 1rem;
+    }
+   
 }
+
